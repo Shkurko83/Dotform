@@ -1,71 +1,73 @@
 # Dotform
 
-**Тактильный язык и приложение для изучения шрифта Брайля и общения со слепыми и слепоглухими людьми через вибрацию на смартфоне и Apple Watch.**
+**Languages:** **English** | [Русский](README.ru.md)
 
-> **DotForm Language** - авторский метод преобразования шеститочечной ячейки Брайля в последовательность вибросигналов по трём горизонтальным зонам экрана. Проект Dotform - программная реализация этого метода: обучение, настройка тактильных сигналов и передача текста с устройства зрячего человека на устройство слепого или слепоглухого пользователя.
+**A tactile language and iOS/watchOS app for learning Braille and communicating with blind and deafblind people through vibration on a smartphone and Apple Watch.**
 
----
-
-<!-- СКРИНШОТ: hero / главный экран приложения (список уроков или онбординг с названием Dotform). Рекомендуемый размер: широкий баннер или iPhone screenshot. -->
-<!-- ![Dotform - главный экран](docs/screenshots/01-home-or-lessons.png) -->
-
-## Содержание
-
-1. [Зачем нужен Dotform](#зачем-нужен-dotform)
-2. [Заявление об авторстве и приоритете](#заявление-об-авторстве-и-приоритете)
-3. [Суть изобретения: DotForm Language](#суть-изобретения-dotform-language)
-4. [Как «читается» карточка символа](#как-читается-карточка-символа)
-5. [Обучение и закрепление](#обучение-и-закрепление)
-6. [Общение: передача текста вибросигналами](#общение-передача-текста-вибросигналами)
-7. [Что умеет приложение](#что-умеет-приложение)
-8. [Техническая архитектура](#техническая-архитектура)
-9. [Стек и требования](#стек-и-требования)
-10. [Сборка и запуск](#сборка-и-запуск)
-11. [Структура репозитория](#структура-репозитория)
-12. [Дорожная карта](#дорожная-карта)
-13. [Лицензия и контакты](#лицензия-и-контакты)
+> **DotForm Language** - an original method that turns a six-dot Braille cell into a sequence of vibration signals across three horizontal screen zones. The Dotform project is the software implementation of that method: learning, configurable tactile feedback, and text transfer from a sighted person's device to a blind or deafblind person's phone or watch.
 
 ---
 
-## Зачем нужен Dotform
+<!-- SCREENSHOT: hero / main app screen (lessons list or onboarding with the Dotform name). Preferred size: wide banner or iPhone screenshot. -->
+<!-- ![Dotform - home screen](docs/screenshots/01-home-or-lessons.png) -->
 
-Классический шрифт Брайля опирается на **осязание рельефных точек**. Цифровые устройства почти никогда не дают слепоглухому человеку эквивалентного канала: экран гладкий, речь недоступна или ограничена, а стандартные haptic-эффекты iOS не кодируют буквы.
+## Contents
 
-**Проблема особенно остра для слепоглухих людей:** нет ни зрения, ни (часто) слуха - остаётся тактильный канал. Существующие решения (рельефные дисплеи Брайля, дактилология, жесты на ладони) ценны, но дороги, требуют присутствия собеседника рядом или специального оборудования.
-
-**Dotform не заменяет** Брайль, жестовые системы и работу сурдотифлопедагога. Он **дополняет** их и делает доступнее использование **обычного смартфона и умных часов**:
-
-- изучение символов через **карточки DotForm** и проведение пальцем сверху вниз;
-- общение: зрячий пишет текст на своём телефоне - слепой или слепоглухой **чувствует** тот же текст вибрацией на телефоне или Apple Watch;
-- настройка силы, мягкости и длительности вибрации под индивидуальную чувствительность.
-
-Если подход приживётся в практике и сообществе, это может стать стимулом для Apple, Google и других платформ развивать системные API доступности и позволить разработчикам встраивать DotForm Language в свои приложения.
+1. [Why Dotform](#why-dotform)
+2. [Authorship and priority statement](#authorship-and-priority-statement)
+3. [The invention: DotForm Language](#the-invention-dotform-language)
+4. [How a symbol card is "read"](#how-a-symbol-card-is-read)
+5. [Learning and practice](#learning-and-practice)
+6. [Communication: sending text as vibration](#communication-sending-text-as-vibration)
+7. [What the app can do](#what-the-app-can-do)
+8. [Technical architecture](#technical-architecture)
+9. [Stack and requirements](#stack-and-requirements)
+10. [Build and run](#build-and-run)
+11. [Repository layout](#repository-layout)
+12. [Roadmap](#roadmap)
+13. [License and contact](#license-and-contact)
 
 ---
 
-## Заявление об авторстве и приоритете
+## Why Dotform
 
-Настоящий открытый репозиторий фиксирует **концепцию, метод кодирования и программную реализацию** подхода к изучению и передаче шрифта Брайля через пространственно-зонированную вибрацию экрана (**DotForm Language**), разработанного автором проекта.
+Classic Braille relies on **touching raised dots**. Digital devices almost never give a deafblind person an equivalent channel: the screen is flat, speech may be unavailable or limited, and standard iOS haptics do not encode letters.
+
+**The problem is especially acute for deafblind people:** no sight and often no hearing - the tactile channel remains. Existing solutions (refreshable Braille displays, tactile signing, palm spelling) are valuable but expensive, require a partner nearby, or need specialized hardware.
+
+**Dotform does not replace** Braille, gesture systems, or teachers of the deafblind. It **complements** them and makes everyday **smartphones and smartwatches** more usable:
+
+- learn symbols via **DotForm cards** by sliding a finger from top to bottom;
+- communicate: a sighted person types on their phone - a blind or deafblind person **feels** the same text as vibration on a phone or Apple Watch;
+- tune intensity, sharpness, and duration to individual tactile sensitivity.
+
+If the approach takes hold in practice and in the community, it may encourage Apple, Google, and other platforms to grow accessibility APIs so developers can embed DotForm Language in their own apps.
+
+---
+
+## Authorship and priority statement
+
+This open repository records the **concept, encoding method, and software implementation** of learning and transmitting Braille through spatially zoned screen vibration (**DotForm Language**), developed by the project author.
 
 | | |
 |---|---|
-| **Название метода** | DotForm Language |
-| **Программный продукт** | приложение Dotform (iOS / watchOS) |
-| **Автор** | Shkurko83 ([репозиторий на GitHub](https://github.com/Shkurko83/Dotform)) |
-| **Публикация исходного кода** | публичный репозиторий GitHub с датированной историей коммитов |
-| **Назначение публикации** | открытое описание изобретения, подтверждение даты разработки и приоритета при подготовке патентной заявки |
+| **Method name** | DotForm Language |
+| **Software product** | Dotform app (iOS / watchOS) |
+| **Author** | Shkurko83 ([GitHub repository](https://github.com/Shkurko83/Dotform)) |
+| **Source publication** | Public GitHub repository with dated commit history |
+| **Purpose of publication** | Open description of the invention; dated evidence of development and priority for patent filing |
 
-Публикация в открытом доступе **не означает отказ от прав** на изобретение. Автор оставляет за собой право на патентную охрану метода DotForm Language и связанных вариантов реализации. Использование кода регулируется лицензией репозитория (см. раздел ниже); использование **идеи метода** в коммерческих продуктах без согласия автора не подразумевается автоматически.
+Open publication **does not waive rights** in the invention. The author reserves the right to seek patent protection for DotForm Language and related implementations. Use of the code is governed by the repository license (see below); use of the **method idea** in commercial products is not automatically granted.
 
-> Текст этого README является частью публичного описания изобретения: схема трёх зон, правила длинного / одного короткого / двух коротких сигналов, сценарии обучения по карточкам и сценарии межсетевой передачи текста вибропотоком.
+> This README is part of the public description of the invention: the three-zone layout, the long / single-short / double-short rules, card-based learning scenarios, and cross-device text delivery as a vibration stream.
 
 ---
 
-## Суть изобретения: DotForm Language
+## The invention: DotForm Language
 
-### Исходная ячейка Брайля
+### The Braille cell
 
-Стандартная шеститочечная ячейка:
+Standard six-dot cell:
 
 ```
   1   4
@@ -73,175 +75,175 @@
   3   6
 ```
 
-Точки 1–3 - левый столбец (сверху вниз), точки 4–6 - правый столбец.
+Dots 1-3 - left column (top to bottom); dots 4-6 - right column.
 
-### Ключевая идея DotForm
+### Core DotForm idea
 
-Карточка символа на экране телефона **делится на три горизонтальные зоны**:
+A symbol card on the phone screen is **split into three horizontal zones**:
 
-| Зона | Точки Брайля |
+| Zone | Braille dots |
 |------|----------------|
-| **Верхняя** | 1 (слева) и 4 (справа) |
-| **Средняя** | 2 (слева) и 5 (справа) |
-| **Нижняя** | 3 (слева) и 6 (справа) |
+| **Top** | 1 (left) and 4 (right) |
+| **Middle** | 2 (left) and 5 (right) |
+| **Bottom** | 3 (left) and 6 (right) |
 
-Каждая зона кодируется **одним вибропаттерном**, зависящим от того, какие точки в этой строке заполнены:
+Each zone maps to **one vibration pattern**, depending on which dots in that row are raised:
 
-| Содержимое зоны | Вибросигнал DotForm |
-|-----------------|---------------------|
-| Есть **и левая, и правая** точка | **Длинный** непрерывный сигнал |
-| Только **левая** точка | **Один короткий** сигнал |
-| Только **правая** точка | **Два коротких** сигнала подряд |
-| Точек нет | Сигнал зоны **не выдаётся** (пауза / пропуск) |
+| Zone contents | DotForm vibration |
+|---------------|-------------------|
+| **Both** left and right dots | **Long** continuous signal |
+| **Left only** | **One short** signal |
+| **Right only** | **Two short** signals in a row |
+| No dots | Zone signal is **omitted** (pause / skip) |
 
-Таким образом, символ Брайля превращается в **упорядоченную сверху вниз последовательность из одного–трёх вибрособытий** (по числу непустых зон). Пользователь, проводя пальцем по экрану **сверху вниз через все три зоны**, последовательно получает эти сигналы и «собирает» букву тактильно - без рельефной бумаги и без обязательной речи.
+A Braille character thus becomes an **ordered top-to-bottom sequence of one to three vibration events** (one per non-empty zone). The learner slides a finger **down through all three zones**, receives those signals in order, and builds the letter by touch - without embossed paper and without requiring speech.
 
-Это и есть **DotForm Language**: язык пространственно-зонированной вибрации для цифрового представления Брайля.
+That is **DotForm Language**: a spatially zoned vibration language for digital Braille.
 
-<!-- СКРИНШОТ: карточка буквы Брайля на весь экран (BrailleCell / урок), желательно с видимыми точками. Подпись: «Карточка символа - три горизонтальные зоны». -->
-<!-- ![Карточка символа DotForm](docs/screenshots/02-braille-card-zones.png) -->
+<!-- SCREENSHOT: full-screen Braille letter card (BrailleCell / lesson), preferably with visible dots. Caption: "Symbol card - three horizontal zones". -->
+<!-- ![DotForm symbol card](docs/screenshots/02-braille-card-zones.png) -->
 
-### Схема кодирования (иллюстрация)
+### Encoding diagram
 
 ```
         ┌─────────────┬─────────────┐
-  ВЕРХ  │   • 1       │   • 4       │  →  длинный  /  один короткий  /  два коротких  /  тишина
+   TOP  │   • 1       │   • 4       │  →  long  /  one short  /  two shorts  /  silence
         ├─────────────┼─────────────┤
- СЕРЕД. │   • 2       │   • 5       │  →  то же правило
+ MIDDLE │   • 2       │   • 5       │  →  same rule
         ├─────────────┼─────────────┤
-   НИЗ  │   • 3       │   • 6       │  →  то же правило
+ BOTTOM │   • 3       │   • 6       │  →  same rule
         └─────────────┴─────────────┘
-              палец ведётся сверху ↓ вниз
+              finger moves top ↓ bottom
 ```
 
-**Пример.** Буква, у которой заполнены точки 1 и 2 (левый верх и левая середина):
+**Example.** A letter with dots 1 and 2 filled (left top and left middle):
 
-1. Верхняя зона → один короткий сигнал (только левая).  
-2. Средняя зона → один короткий сигнал (только левая).  
-3. Нижняя зона → тишина (пустая).
+1. Top zone → one short (left only).  
+2. Middle zone → one short (left only).  
+3. Bottom zone → silence (empty).
 
-Пользователь проходит карточку сверху вниз и получает два коротких сигнала с паузой - это тактильный «отпечаток» буквы в DotForm.
+Sliding top to bottom yields two short pulses with a pause - the tactile "fingerprint" of that letter in DotForm.
 
-<!-- СКРИНШОТ: схема/скриншот сенсорного упражнения «верх / середина / низ» или урок с подсветкой зон. -->
-<!-- ![Три зоны экрана](docs/screenshots/03-three-zones-exercise.png) -->
-
----
-
-## Как «читается» карточка символа
-
-1. На экране отображается **карточка** с ячейкой Брайля (для контроля зрячим сопровождающим точки могут быть видимы; для слепоглухого ребёнка визуал не обязателен).
-2. Обучающийся кладёт палец в **верхнюю** часть экрана и медленно ведёт **вниз**.
-3. При входе в каждую зону устройство выдаёт соответствующий вибропаттерн DotForm (или молчит, если зона пустая).
-4. После прохождения всех трёх зон пользователь получает полную тактильную форму символа.
-5. Далее идут фазы закрепления и проверки (собрать букву, отличить от похожей и т.д.).
-
-Метод рассчитан на **обучение новому цифровому «прочтению» Брайля**, а не на мгновенную замену бумажного Брайля. После освоения DotForm тот же код зон может использоваться при **потоковой передаче текста** без проведения пальцем по карточке - устройство само воспроизводит последовательность сигналов символа.
+<!-- SCREENSHOT: sensory exercise "top / middle / bottom" or a lesson highlighting zones. -->
+<!-- ![Three screen zones](docs/screenshots/03-three-zones-exercise.png) -->
 
 ---
 
-## Обучение и закрепление
+## How a symbol card is "read"
 
-Приложение ведёт пользователя от сенсорной подготовки к буквам:
+1. The screen shows a **card** with a Braille cell (dots may be visible for a sighted companion; for a deafblind child visuals are optional).
+2. The learner places a finger at the **top** and slowly moves **down**.
+3. Entering each zone triggers the matching DotForm pattern (or silence if the zone is empty).
+4. After all three zones, the learner has the full tactile form of the symbol.
+5. Reinforcement and testing follow (build the letter, distinguish similar shapes, etc.).
 
-1. **Сенсорная подготовка** - отличить короткий и длинный сигнал, мягкую и сильную вибрацию, лево/право, верх/середину/низ.  
-2. **Пространственные основы** - найти одну или две точки на ячейке.  
-3. **Первые буквы и полная ячейка** - изучение символов активного алфавита (русский / English Grade 1).  
-4. **Буква в контексте и закрепление** - повтор, рекомендации по ошибкам, прогресс.
-
-Профили:
-
-- **Незрячий ребёнок** - звук, речь и вибрация;  
-- **Слепоглухой ребёнок** - вибрация как основной канал;  
-- **Родитель / педагог** - настройка набора букв, сложности, сессий.
-
-<!-- СКРИНШОТ: список уроков / уровней. -->
-<!-- ![Список уроков](docs/screenshots/04-lessons-list.png) -->
-
-<!-- СКРИНШОТ: экран прогресса. -->
-<!-- ![Прогресс обучения](docs/screenshots/05-progress.png) -->
+The method trains a **new digital way to read Braille**, not an instant replacement for paper Braille. After DotForm is learned, the same zone code can drive **streaming text playback** without finger tracing - the device plays the symbol's signal sequence itself.
 
 ---
 
-## Общение: передача текста вибросигналами
+## Learning and practice
 
-Вторая часть изобретения - **канал общения**.
+The app moves from sensory prep to letters:
 
-1. **Зрячий** (родитель, педагог, собеседник) пишет обычный текст на своём iPhone в режиме «Я пишу».  
-2. Устройства **спариваются локально по QR-коду** (Multipeer Connectivity: Bluetooth / локальная Wi‑Fi).  
-3. Текст уходит на телефон **слепого или слепоглухого** в режиме «Я принимаю».  
-4. Приёмник **показывает карточки символов** по очереди и одновременно воспроизводит **вибропоток** с параметрами из настроек пользователя (сила, резкость, длительность, свои паттерны).  
-5. Тот же поток может ретранслироваться на **Apple Watch** через WatchConnectivity - ощущать сообщение можно на запястье.
+1. **Sensory prep** - tell short from long, soft from strong, left/right, top/middle/bottom.  
+2. **Spatial basics** - find one or two dots on the cell.  
+3. **First letters and full cell** - study symbols of the active alphabet (Russian / English Grade 1).  
+4. **Letter in context and review** - repetition, error-based recommendations, progress.
 
-Так человек, освоивший DotForm Language, может **понимать входящий текст тактильно**, без экрана Брайля и без обязательного голоса. В будущем тот же протокол сообщений рассчитан на замену локального транспорта на интернет-мессенджер без смены модели «текст → символы → вибро».
+Profiles:
 
-<!-- СКРИНШОТ: экран «Связь» с QR-кодом (режим приёмника). -->
-<!-- ![Спаривание по QR](docs/screenshots/06-relay-qr.png) -->
+- **Blind child** - speech, sound, and vibration;  
+- **Deafblind child** - vibration as the primary channel;  
+- **Parent / teacher** - letter set, difficulty, session controls.
 
-<!-- СКРИНШОТ: экран писателя с полем ввода текста. -->
-<!-- ![Отправка текста](docs/screenshots/07-relay-writer.png) -->
+<!-- SCREENSHOT: lessons / levels list. -->
+<!-- ![Lessons list](docs/screenshots/04-lessons-list.png) -->
 
-<!-- СКРИНШОТ: приёмник - карточка символа во время воспроизведения сообщения. -->
-<!-- ![Воспроизведение символа на приёмнике](docs/screenshots/08-relay-receiver-card.png) -->
-
----
-
-## Что умеет приложение
-
-| Раздел | Возможности |
-|--------|-------------|
-| **Уроки** | Сенсорные упражнения, обучение буквам RU/EN, модельная рука, проверка сборки символа |
-| **Прогресс** | Успехи, ошибки, рекомендации к повтору |
-| **Сигналы** | Исчерпывающий каталог системных и Core Haptics вибраций, системных и синтезированных звуков; назначение сигналов ролям обратной связи; **конструктор своей вибрации** (сила, резкость, длительность, огибающая) |
-| **Связь** | QR-спаривание, отправка/приём текста, очередь карточек + вибро, стоп, Apple Watch |
-| **Настройки** | Профиль ребёнка, язык алфавита Брайля, набор букв, интенсивность haptic, паузы, режим точек по очереди в связи |
-
-<!-- СКРИНШОТ: каталог вибраций / сигналов. -->
-<!-- ![Каталог сигналов](docs/screenshots/09-sensory-catalog.png) -->
-
-<!-- СКРИНШОТ: конструктор своей вибрации. -->
-<!-- ![Конструктор вибрации](docs/screenshots/10-custom-haptic.png) -->
-
-<!-- СКРИНШОТ: настройки (профиль / алфавит). -->
-<!-- ![Настройки](docs/screenshots/11-settings.png) -->
+<!-- SCREENSHOT: progress screen. -->
+<!-- ![Learning progress](docs/screenshots/05-progress.png) -->
 
 ---
 
-## Техническая архитектура
+## Communication: sending text as vibration
+
+The second part of the invention is a **communication channel**.
+
+1. A **sighted** person (parent, teacher, partner) types ordinary text on an iPhone in **Writer** mode.  
+2. Devices **pair locally via QR** (Multipeer Connectivity: Bluetooth / local Wi-Fi).  
+3. Text is sent to the **blind or deafblind** phone in **Receiver** mode.  
+4. The receiver **shows symbol cards** in order and plays a **vibration stream** using the user's settings (intensity, sharpness, duration, custom patterns).  
+5. The same stream can be relayed to an **Apple Watch** via WatchConnectivity - the message can be felt on the wrist.
+
+Someone who has learned DotForm Language can **understand incoming text by touch**, without a Braille display and without requiring speech. The same message protocol is designed so local transport can later be replaced by an internet messenger without changing the "text → symbols → vibration" model.
+
+<!-- SCREENSHOT: Relay screen with QR (receiver mode). -->
+<!-- ![QR pairing](docs/screenshots/06-relay-qr.png) -->
+
+<!-- SCREENSHOT: writer screen with text field. -->
+<!-- ![Sending text](docs/screenshots/07-relay-writer.png) -->
+
+<!-- SCREENSHOT: receiver - symbol card while a message plays. -->
+<!-- ![Receiver symbol playback](docs/screenshots/08-relay-receiver-card.png) -->
+
+---
+
+## What the app can do
+
+| Section | Features |
+|---------|----------|
+| **Lessons** | Sensory exercises, RU/EN letter learning, model-hand sequence, build-and-check |
+| **Progress** | Successes, errors, review recommendations |
+| **Signals** | Broad catalog of system and Core Haptics vibrations, system and synthesized sounds; assign signals to feedback roles; **custom haptic builder** (intensity, sharpness, duration, envelope) |
+| **Relay** | QR pairing, send/receive text, card queue + vibration, stop, Apple Watch |
+| **Settings** | Child profile, Braille script language, letter set, haptic intensity, pauses, play-dots-in-sequence for relay |
+
+<!-- SCREENSHOT: vibration / signal catalog. -->
+<!-- ![Signal catalog](docs/screenshots/09-sensory-catalog.png) -->
+
+<!-- SCREENSHOT: custom haptic builder. -->
+<!-- ![Custom haptic builder](docs/screenshots/10-custom-haptic.png) -->
+
+<!-- SCREENSHOT: settings (profile / alphabet). -->
+<!-- ![Settings](docs/screenshots/11-settings.png) -->
+
+---
+
+## Technical architecture
 
 ```
 ┌──────────────────┐     QR + Multipeer      ┌──────────────────────┐
-│  iPhone писателя │ ───────────────────────► │ iPhone приёмника     │
-│  (текст)         │     RelayEnvelope JSON   │ карточки + вибро     │
+│  Writer iPhone   │ ───────────────────────► │ Receiver iPhone      │
+│  (text)          │     RelayEnvelope JSON   │ cards + vibration    │
 └──────────────────┘                          └──────────┬───────────┘
                                                          │ WCSession
                                                          ▼
                                                ┌──────────────────────┐
                                                │ Apple Watch          │
-                                               │ символ + haptic      │
+                                               │ symbol + haptic      │
                                                └──────────────────────┘
 ```
 
-- **Алфавиты:** масштабируемый каталог `BrailleScript` / `BrailleGlyph` (русский полный, English Grade 1; задел под другие языки).  
-- **Обратная связь:** композитный движок audio/haptic, каталог Sensory + Core Haptics, пользовательские определения.  
-- **Связь:** версионируемый `RelayEnvelope` (задел под будущий интернет-транспорт).  
-- **Токенизация текста:** `TextToHapticEncoder` → очередь глифов → карточка + воспроизведение.  
-- **Доступность:** VoiceOver-подписи, профили без речи для слепоглухих, крупные полноэкранные карточки.
+- **Alphabets:** scalable `BrailleScript` / `BrailleGlyph` catalog (full Russian, English Grade 1; ready for more languages).  
+- **Feedback:** composite audio/haptic engine, Sensory catalog + Core Haptics, user-defined patterns.  
+- **Relay:** versioned `RelayEnvelope` (ready for a future internet transport).  
+- **Text tokenization:** `TextToHapticEncoder` → glyph queue → card + playback.  
+- **Accessibility:** VoiceOver labels, speech-off profiles for deafblind users, large full-screen cards.
 
-Подробнее - спецификация вибро-алфавита цифр и пунктуации (DotForm Language): [`Dotform/Docs/VibroAlphabetDigitsPunctuation.md`](Dotform/Docs/VibroAlphabetDigitsPunctuation.md).
-
----
-
-## Стек и требования
-
-- **Язык:** Swift / SwiftUI  
-- **Платформы:** iOS (iPhone), watchOS (Apple Watch)  
-- **Ключевые фреймворки:** UIKit Feedback / Core Haptics, AVFoundation, MultipeerConnectivity, WatchConnectivity, AVFoundation (камера для QR)  
-- **Xcode:** актуальная версия с поддержкой заявленного deployment target проекта  
-- Для полной схемы с embedded Watch нужен установленный **watchOS platform** в Xcode  
+Details - digits and punctuation vibro-alphabet specification (DotForm Language): [`Dotform/Docs/VibroAlphabetDigitsPunctuation.md`](Dotform/Docs/VibroAlphabetDigitsPunctuation.md) (currently in Russian).
 
 ---
 
-## Сборка и запуск
+## Stack and requirements
+
+- **Language:** Swift / SwiftUI  
+- **Platforms:** iOS (iPhone), watchOS (Apple Watch)  
+- **Key frameworks:** UIKit Feedback / Core Haptics, AVFoundation, MultipeerConnectivity, WatchConnectivity, camera for QR  
+- **Xcode:** current version matching the project's deployment target  
+- Full scheme with embedded Watch requires the **watchOS platform** installed in Xcode  
+
+---
+
+## Build and run
 
 ```bash
 git clone git@github.com:Shkurko83/Dotform.git
@@ -249,49 +251,51 @@ cd Dotform
 open Dotform.xcodeproj
 ```
 
-1. Выберите схему **Dotform**.  
-2. Подключите реальный iPhone (вибрация и Core Haptics на симуляторе ограничены).  
-3. Для часов - схема / target **DotformWatch**, paired Apple Watch.  
-4. Для «Связи» разрешите доступ к **локальной сети** и **камере** (сканирование QR).
+1. Select the **Dotform** scheme.  
+2. Use a real iPhone (simulator haptics / Core Haptics are limited).  
+3. For Watch - **DotformWatch** scheme/target and a paired Apple Watch.  
+4. For Relay, allow **Local Network** and **Camera** (QR scan).
 
 ---
 
-## Структура репозитория
+## Repository layout
 
 ```
-Dotform/                 # iOS-приложение
-  App/                   # Root, AppState, вкладки
-  Data/                  # Алфавиты RU/EN, каталог уроков
-  Docs/                  # Документы по расширению вибро-алфавита
-  Models/                # Брайль, настройки, relay, sensory
-  Services/              # Haptic, речь, уроки, Multipeer, Watch bridge
-  Views/                 # Уроки, карточка ячейки, связь, сигналы, настройки
-DotformWatch/            # Компаньон Apple Watch
+Dotform/                 # iOS app
+  App/                   # Root, AppState, tabs
+  Data/                  # RU/EN alphabets, lesson catalog
+  Docs/                  # Vibro-alphabet extension docs
+  Models/                # Braille, settings, relay, sensory
+  Services/              # Haptic, speech, lessons, Multipeer, Watch bridge
+  Views/                 # Lessons, cell card, relay, signals, settings
+DotformWatch/            # Apple Watch companion
 Dotform.xcodeproj/
+README.md                # English (this file)
+README.ru.md             # Russian
 ```
 
 ---
 
-## Дорожная карта
+## Roadmap
 
-- [ ] Полноценный вибро-алфавит цифр и пунктуации в UI обучения  
-- [ ] Интернет-мессенджер на базе того же `RelayEnvelope`  
-- [ ] Дополнительные алфавиты (DE и др.)  
-- [ ] Углубление кодирования DotForm Language в потоковой передаче (явные зональные паттерны long / short / double-short на символ)  
-- [ ] Методические материалы для педагогов и родителей  
-
----
-
-## Лицензия и контакты
-
-Репозиторий: [github.com/Shkurko83/Dotform](https://github.com/Shkurko83/Dotform)
-
-По вопросам лицензирования кода, сотрудничества и **патентной охраны метода DotForm Language** обращайтесь к автору через GitHub.
+- [ ] Full digits and punctuation vibro-alphabet in the learning UI  
+- [ ] Internet messenger on the same `RelayEnvelope`  
+- [ ] Additional alphabets (e.g. German)  
+- [ ] Stronger DotForm Language encoding in streaming playback (explicit long / short / double-short zone patterns per symbol)  
+- [ ] Teaching materials for parents and educators  
 
 ---
 
-### Краткая формула изобретения (для ориентира)
+## License and contact
 
-> Способ тактильного представления символа шрифта Брайля на сенсорном экране электронного устройства, при котором поверхность экрана с отображаемой ячейкой разделяют на три горизонтальные зоны, соответствующие верхнему, среднему и нижнему ряду точек ячейки; для каждой зоны формируют вибросигнал по правилу: при наличии обеих точек ряда - длинный сигнал, при наличии только левой - один короткий, при наличии только правой - два коротких; пользователь воспринимает символ, проводя касанием сверху вниз через указанные зоны. Способ также включает передачу последовательности символов текста в виде соответствующих вибросигналов с одного устройства на другое (в том числе на носимое устройство) для общения со слепыми и слепоглухими пользователями.
+Repository: [github.com/Shkurko83/Dotform](https://github.com/Shkurko83/Dotform)
 
-*Публикация: открытый репозиторий GitHub с датированной историей коммитов.*
+For licensing, collaboration, and **patent protection of DotForm Language**, contact the author via GitHub.
+
+---
+
+### Short invention formula (reference)
+
+> A method of tactile presentation of a Braille character on a touchscreen electronic device, wherein the screen surface showing the cell is divided into three horizontal zones corresponding to the upper, middle, and lower rows of cell dots; for each zone a vibration signal is formed by the rule: both dots present - long signal; left only - one short; right only - two shorts; the user perceives the character by sliding a touch from top to bottom through those zones. The method also includes transmitting a sequence of text characters as corresponding vibration signals from one device to another (including a wearable device) for communication with blind and deafblind users.
+
+*Publication: public GitHub repository with dated commit history.*
