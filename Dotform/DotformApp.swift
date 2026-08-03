@@ -1,17 +1,15 @@
-//
-//  DotformApp.swift
-//  Dotform
-//
-//  Created by Butt Simpson on 06.07.2026.
-//
-
 import SwiftUI
 
 @main
 struct DotformApp: App {
+    init() {
+        NavigationSwipeBackManager.shared.disableInKeyWindow()
+        WatchConnectivityBridge.shared.activate()
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }
