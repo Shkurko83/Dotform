@@ -227,7 +227,7 @@
 - **Токенизация текста:** `TextToHapticEncoder` → очередь глифов → карточка + воспроизведение.  
 - **Доступность:** VoiceOver-подписи, профили без речи для слепоглухих, крупные полноэкранные карточки.
 
-Подробнее о будущем вибро-алфавите для цифр и пунктуации: [`Dotform/Docs/VibroAlphabetDigitsPunctuation.md`](Dotform/Docs/VibroAlphabetDigitsPunctuation.md).
+Подробнее - спецификация вибро-алфавита цифр и пунктуации (DotForm Language): [`Dotform/Docs/VibroAlphabetDigitsPunctuation.md`](Dotform/Docs/VibroAlphabetDigitsPunctuation.md).
 
 ---
 
