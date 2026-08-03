@@ -288,6 +288,8 @@ README.ru.md             # Russian
 
 ## License and contact
 
+See [`LICENSE`](LICENSE): **All Rights Reserved**. Public visibility does not grant rights to copy, modify, fork, commercially use the code, or practice the DotForm Language method without written permission.
+
 Repository: [github.com/Shkurko83/Dotform](https://github.com/Shkurko83/Dotform)
 
 For licensing, collaboration, and **patent protection of DotForm Language**, contact the author via GitHub.
