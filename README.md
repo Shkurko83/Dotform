@@ -53,7 +53,7 @@ This open repository records the **concept, encoding method, and software implem
 |---|---|
 | **Method name** | DotForm Language |
 | **Software product** | Dotform app (iOS / watchOS) |
-| **Author** | Shkurko83 ([GitHub repository](https://github.com/Shkurko83/Dotform)) |
+| **Author** | Konstantin Shkurko (shkurko83@gmail.com), GitHub: [Shkurko83](https://github.com/Shkurko83/Dotform) |
 | **Source publication** | Public GitHub repository with dated commit history |
 | **Purpose of publication** | Open description of the invention; dated evidence of development and priority for patent filing |
 
@@ -292,7 +292,7 @@ See [`LICENSE`](LICENSE): **All Rights Reserved**. Public visibility does not gr
 
 Repository: [github.com/Shkurko83/Dotform](https://github.com/Shkurko83/Dotform)
 
-For licensing, collaboration, and **patent protection of DotForm Language**, contact the author via GitHub.
+For licensing, collaboration, and **patent protection of DotForm Language**, contact Konstantin Shkurko: shkurko83@gmail.com or via GitHub.
 
 ---
 

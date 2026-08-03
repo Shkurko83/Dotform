@@ -53,7 +53,7 @@
 |---|---|
 | **Название метода** | DotForm Language |
 | **Программный продукт** | приложение Dotform (iOS / watchOS) |
-| **Автор** | Shkurko83 ([репозиторий на GitHub](https://github.com/Shkurko83/Dotform)) |
+| **Автор** | Konstantin Shkurko (shkurko83@gmail.com), GitHub: [Shkurko83](https://github.com/Shkurko83/Dotform) |
 | **Публикация исходного кода** | публичный репозиторий GitHub с датированной историей коммитов |
 | **Назначение публикации** | открытое описание изобретения, подтверждение даты разработки и приоритета при подготовке патентной заявки |
 
@@ -292,7 +292,7 @@ README.ru.md             # Русский
 
 Репозиторий: [github.com/Shkurko83/Dotform](https://github.com/Shkurko83/Dotform)
 
-По вопросам лицензирования кода, сотрудничества и **патентной охраны метода DotForm Language** обращайтесь к автору через GitHub.
+По вопросам лицензирования кода, сотрудничества и **патентной охраны метода DotForm Language** обращайтесь к Konstantin Shkurko: shkurko83@gmail.com или через GitHub.
 
 ---
 
